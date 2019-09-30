@@ -3,6 +3,7 @@ apiVersion: elasticsearch.k8s.elastic.co/v1alpha1
 kind: Elasticsearch
 metadata:
   name: elasticsearch
+  namespace: log
 spec:
   version: 7.2.0
   nodes:

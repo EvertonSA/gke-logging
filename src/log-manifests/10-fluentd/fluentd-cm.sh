@@ -1,3 +1,4 @@
+kubectl apply -f - <<EOF
 kind: ConfigMap
 apiVersion: v1
 metadata:
@@ -462,6 +463,11 @@ data:
       include_tag_key true
       host elasticsearch-es-http
       port 9200
+      scheme https
+      user elastic
+      password ${OPS_PASSWORD}
+      ssl_verify false
+      ssl_version TLSv1_2
       logstash_format true
       <buffer>
         @type file
@@ -477,3 +483,4 @@ data:
         overflow_action block
       </buffer>
     </match>
+EOF
