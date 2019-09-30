@@ -21,7 +21,7 @@ This repo is to be used together with the GKE Bootstrapper, but it is not a
 requirement. The things you need are:
 
    - Kubernetes Cluster
-   - Istio 1.8 or above
+   - Istio 1.8 or above (public-gateway configured)
 
 Although using the GKE Bootstrapper is not necessary, it is higly recommended. 
 The reason is because you will not need to modify any of the source code to have 
@@ -61,6 +61,10 @@ to the cluster plus the interactions between each one of then:
 
 ![GKE Elastic](./src/tmp/gke-logging-efk.png)
 
+
+continuar amanha Everton, o que falta:
+documentar virtualservice
+documentar access management
 
 
 echo $(kubectl get secret -n log elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode)
